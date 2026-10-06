@@ -1,0 +1,62 @@
+/* Custom Styles and Animations */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Navbar Scrolled State */
+.navbar-scrolled {
+    background-color: rgba(10, 17, 40, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Mobile Menu Transitions */
+#mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Roadmap line animation on mobile */
+@media (max-width: 767px) {
+    .roadmap-item::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 2rem;
+        bottom: -4rem;
+        width: 2px;
+        background-color: #1e293b; /* slate-800 */
+        z-index: 0;
+    }
+    .roadmap-item:last-child::before {
+        display: none;
+    }
+}
